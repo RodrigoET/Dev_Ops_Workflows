@@ -14,3 +14,11 @@ jobs:
         run: |
             echo ${{ steps.ip.outputs.ipv4 }}
             echo ${{ steps.ip.outputs.ipv6 }}
+      - name: Verificar que existe index.html
+        run: |
+            if [ ! -f index.html ]; then
+            echo "❌ index.html no existe"
+            exit 1
+            else
+            echo "✅ index.html encontrado"
+            fi
