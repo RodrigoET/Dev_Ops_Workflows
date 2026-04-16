@@ -16,9 +16,11 @@ jobs:
             echo ${{ steps.ip.outputs.ipv6 }}
       - name: Verificar que existe index.html
         run: |
-            if [ ! -f index.html ]; then
-            echo "❌ index.html no existe"
+            if [ ! -f index.js ]; then
+            echo "❌ index.js no existe"
             exit 1
             else
-            echo "✅ index.html encontrado"
+            echo "✅ index.js encontrado"
             fi
+      - name: fecha server
+        run: echo $(date)
